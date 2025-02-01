@@ -1,13 +1,18 @@
-import React from 'react';
-import Navbar from './components/NavBar';
+import React from "react";
+import Header from "./components/Header/Header";
+import EventShowcase from "./components/EventShowcase/EventShowcase";
+import Features from "./components/Features/Features";
+import Footer from "./components/Footer/Footer";
 
 function App() {
     return (
-        <div>
-            <Navbar />
-            <div style={{ padding: '20px' }}>
-                <h1>Welcome to Material Kit 3</h1>
+        <div className="app-container">
+            <Header />
+            <div className="main-content">
+                <EventShowcase />
+                <Features />
             </div>
+            <Footer />
         </div>
     );
 }
