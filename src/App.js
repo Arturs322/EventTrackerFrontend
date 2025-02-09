@@ -1,19 +1,29 @@
 import React from "react";
-import Header from "./components/Header/Header";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
 import EventShowcase from "./components/EventShowcase/EventShowcase";
 import Features from "./components/Features/Features";
-import Footer from "./components/Footer/Footer";
+import SubmitEvent from "./components/SubmitEvent/SubmitEvent";
+
+function Home() {
+    return (
+        <>
+            <EventShowcase />
+            <Features />
+        </>
+    );
+}
 
 function App() {
     return (
-        <div className="app-container">
-            <Header />
-            <div className="main-content">
-                <EventShowcase />
-                <Features />
-            </div>
-            <Footer />
-        </div>
+        <Router>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/submitevent" element={<SubmitEvent />} />
+                </Routes>
+            </Layout>
+        </Router>
     );
 }
 

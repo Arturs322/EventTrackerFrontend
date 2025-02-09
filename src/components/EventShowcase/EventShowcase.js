@@ -1,7 +1,13 @@
 import React from "react";
 import "./EventShowcase.css";
+import { useNavigate } from "react-router-dom";
 
 const EventShowcase = () => {
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        navigate("/submitevent");
+    };
     return (
         <section className="event-showcase">
             <div className="overlay">
@@ -12,7 +18,7 @@ const EventShowcase = () => {
                     </p>
                     <div className="buttons">
                         <button className="btn primary-btn">Explore Events</button>
-                        <button className="btn secondary-btn">Submit an Event</button>
+                        <button className="btn secondary-btn" onClick={handleSubmit}>Submit an Event</button>
                     </div>
                 </div>
             </div>
